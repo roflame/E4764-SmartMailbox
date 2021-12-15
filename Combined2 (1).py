@@ -35,8 +35,7 @@ spreadsheet_key = '190g032Wi1UO8RdGUmunuQvR6CDv-5VuuwQ-7bbCwDvM'
 # Sheet name not the workbook
 wks_name = 'Spam/Ham'
 
-spreadsheet_key = '190g032Wi1UO8RdGUmunuQvR6CDv-5VuuwQ-7bbCwDvM'
-
+# Credentials in the form of a 'client_secret.json' file can be retrieved from GCP using the Google Sheets API
 gc = pygsheets.authorize(service_file='client_secrets.json')
 
 sh = gc.open_by_key(spreadsheet_key)
@@ -44,9 +43,9 @@ sh = gc.open_by_key(spreadsheet_key)
 # Twilio (sms) stuff:
 
 # Your Account SID from twilio.com/console
-account_sid = "ACb77bd73ecdf4cf34b45754643ca226b4"
+account_sid = ""
 # Your Auth Token from twilio.com/console
-auth_token  = "9938ea2f1fae616c9ae46fde0978caa7"
+auth_token  = ""
 
 client = Client(account_sid, auth_token)
 
