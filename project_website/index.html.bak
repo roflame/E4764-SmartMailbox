@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Columbia University EECS E4764 IoT Project Report #2</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">Intelligent and Connected Mailbox</h1>
+							<p>Columbia University <br>
+								EECS E4764 Fall'21 Internet of Things<br>
+								Intelligent and Connected Systems<br>
+								Team 2 Project Report
+							</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Abstract</span></a></li>
+								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Motivation</span></a></li>
+								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">System</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Results</span></a></li>
+								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
+								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+								<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/_AlcRoqS65E" frameborder="0" allowfullscreen></iframe>-->
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/owcQavW3YhE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+								<h2 class="alt">Intelligent and Connected Mailbox (ICM)</h2>
+								<p>The ICM is Group 2's submission for the final project of the course EECS E4764 in the Fall '21 semester at Columbia University.</p>
+								<p>It is very common nowadays to receive mail in your mailbox that wasn’t sent to the right address, or mail that was meant for older tenants who have moved home since. Instead of the owner having to bear the responsibility of forwarding the wrong mail themselves, we came up with a device called the ICM that can inform the deliverer of its incorrectness without having to bother the owner. The device will read the text directly off an envelope and determine whether the mail has reached the correct person. If it is correct, it will accept the mail, notify the user via text message that they have new mail, attempt to categorize it as spam or not spam for better organization, and even create graphs to visualize mail trends and other statistics. If it is incorrect, it will reject the mail and notify the deliverer to return the mail to its sender.
+</p>
+
+
+							<footer>
+								<a href="#motivation" class="button scrolly">Motivation</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="motivation" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Motivation</h2>
+							</header>
+
+							<p align="left">The ICM is a consumer-facing device that not only improves efficiency and organization, but also helps secure your mail by instantly notifying the user when they have new mail. By automatically categorizing the mail and rejecting incorrect ones, the ICM aims to emulate a system similar to e-mail and save its owner plenty of time. The product’s market can be targeted towards suburban or rural households where each homeowner wouldn’t purchase a large device like Amazon Hub. It can also be a great help towards people with various disabilities or sensory impairments by being able to notify them when they get new mail and automatically help them categorize and send back incorrect mail.</p>
+
+
+
+						</div>
+					</section>
+
+
+					<section id="system" class="three">
+						<div class="container">
+
+							<header>
+								<h2>System</h2>
+							</header>
+
+							<article class="item">
+								<a href="#" class="image fit"><img src="images/BlockDiag.png" alt="" /></a>
+								<header>
+									<h3>Proposed Block Diagram for the ICM system</h3>
+								</header>
+							</article>
+							
+							<p align="left">The ICM mainly functions based on 4 components: Embedded Systems, Computer Vision, Machine Learning, and Data Analysis/Visualization on the Cloud.</p>
+
+							<h3 align="left">Embedded Systems</h3>
+
+							<p align="left">A Raspberry Pi 4 is used as our main processing unit with the remaining various components mounted around the box. The owner attaches a USB drive containing a .txt file with their name on it.
+When a new envelope is put into the box, an LDR (Light Dependent Resistor) detects the change in light intensity and realizes that mail has been received.
+An ESP32 camera module attached to an FTDI interface is used to take a picture of the envelope and save it onto our Raspberry Pi, after which the Computer Vision (CV) component takes over.
+After the CV component compares the detected name on the envelope and the user’s name on the drive, if they are the same (within a preset 70% accuracy range), a Servo Motor turns to accept the mail and let it fall into the box, while a Green LED indicates to the deliverer that the mail has been accepted.
+If the comparison determines that the mail has not reached the correct person, a Red LED indicates to the deliverer to take out the mail and return it to the sender.
+</p>
+
+							<h3 align="left">Computer Vision</h3>
+
+							<p align="left">Text goes here</p>
+							
+							<h3 align="left">Machine Learning</h3>
+
+							<p align="left">Machine Learning is performed to distinguish spam and non-spam mails.
+A publicly available dataset with spam keywords was used - examples specific to ‘spammy’ mails were added to refine the model for our particular usage.
+A k-nearest neighbors (kNN) classifier was used with an accuracy of 92%.
+</p>
+							
+							<h3 align="left">Data Analysis/Visualization</h3>
+
+							<p align="left">A text notification is sent to the mailbox owner stating spam/not, and a link to view data visualization stats - done using the Twilio messaging API.
+All mail data, including spam/not is sent to Google Sheets (using GCP Google Sheets and Google Drive API’s) for storage.
+Google DataStudio was used for data visualization.
+The data source was the Google Sheets worksheet with mail data.
+Graphs were designed to show relevant information about the mail to the user, including mail trends. 
+</p>
+
+							<h3 align="left">Prototype</h3>
+							
+							<article class="item">
+								<a href="#" class="image fit"><img src="images/Prototype.jpeg" alt="" /></a>
+								<header>
+									<h3>Our First Prototype Design of the ICM</h3>
+								</header>
+							</article>
+							
+
+
+
+						</div>
+					</section>
+
+
+					<section id="results" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Results</h2>
+							</header>
+
+							<p align="left">Remember to use figures to help illustrate results</p>
+
+
+							<article class="item">
+								<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+								<header>
+									<h3>Caption</h3>
+								</header>
+							</article>
+
+
+						</div>
+					</section>
+
+					<section id="references" class="three">
+						<div class="container">
+
+							<header>
+								<h2>References</h2>
+							</header>
+
+							<p align="left">Blah blah blah</p>
+
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="team" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Our Team</h2>
+							</header>
+
+							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Anhad.png" alt="" /></a>
+										<header>
+											<h3>Anhadveer Khokar</h3>
+											<p>M.S. Electrical Engineering at Columbia University.</p>
+											<p>https://www.linkedin.com/in/anhadveer-khokar/</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Nihar Garg</h3>
+											<p>Description and link</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Rohan Raghuraman</h3>
+											<p>Description and link</p>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p align="left">
+								<strong>Anhadveer Khokar: </strong>adk2174@columbia.edu</br>
+								<strong>Nihar Garg: </strong>email here</br>
+								<strong>Rohan Raghuraman: </strong>email here</br>
+							</br>
+								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
+								<!-- <strong>Class Website:</strong>
+									<a href="https://edblogs.columbia.edu/eecs4764-001-2019-3/">Columbia University EECS E4764 Fall '21 IoT</a></br> -->
+								<strong>Instructor:</strong> <a href="http://fredjiang.com/">Professsor Xiaofan (Fred) Jiang</a>
+							</p>
+
+
+							<!-- <form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form> -->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; IoT Project | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Columbia University EECS E4764 IoT Project Report #2</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">Intelligent and Connected Mailbox</h1>
+							<p>Columbia University <br>
+								EECS E4764 Fall'21 Internet of Things<br>
+								Intelligent and Connected Systems<br>
+								Team 2 Project Report
+							</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Abstract</span></a></li>
+								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Motivation</span></a></li>
+								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">System</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Results</span></a></li>
+								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
+								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://github.com/roflame/E4764-SmartMailbox" class="icon fa-github"><span class="label">Github</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+								<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/_AlcRoqS65E" frameborder="0" allowfullscreen></iframe>-->
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/owcQavW3YhE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+								<h2 class="alt">Intelligent and Connected Mailbox (ICM)</h2>
+								<p>The ICM is Group 2's submission for the final project of the course EECS E4764 in the Fall '21 semester at Columbia University.</p>
+								<p>It is very common nowadays to receive mail in your mailbox that was not sent to the right address, or mail that was meant for older tenants who have moved home since. Instead of the owner having to bear the responsibility of forwarding the wrong mail themselves, we came up with a device called the ICM that can inform the deliverer of its incorrectness without having to bother the owner. The device will read the text directly off an envelope and determine whether the mail has reached the correct person. If it is correct, it will accept the mail, notify the user via text message that they have new mail, attempt to categorize it as spam or not spam for better organization, and even create graphs to visualize mail trends and other statistics. If it is incorrect, it will reject the mail and notify the deliverer to return the mail to its sender.
+</p>
+
+
+							<footer>
+								<a href="#motivation" class="button scrolly">Motivation</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="motivation" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Motivation</h2>
+							</header>
+
+							<p align="center">The ICM is a consumer-facing device that not only improves efficiency and organization, but also helps secure your mail by instantly notifying the user when they have new mail. By automatically categorizing the mail and rejecting incorrect ones, the ICM aims to emulate a system similar to e-mail and save its owner plenty of time. The product’s market can be targeted towards suburban or rural households where each homeowner wouldn’t purchase a large device like Amazon Hub. It can also be a great help towards people with various disabilities or sensory impairments by being able to notify them when they get new mail and automatically help them categorize and send back incorrect mail.</p>
+
+						</div>
+					</section>
+
+
+					<section id="system" class="three">
+						<div class="container">
+
+							<header>
+								<h2>System</h2>
+							</header>
+
+							<article class="item">
+								<img src="images/BlockDiag.JPG" width="800" height="600" alt="" />
+									<p>Block Diagram for the ICM system</p>
+							</article>
+							
+							<p align="left">The ICM mainly functions based on 4 components: Embedded Systems, Computer Vision, Machine Learning, and Data Visualization on the Cloud.</p>
+
+							<h3 align="left">Embedded Systems</h3>
+
+							<p align="left">A Raspberry Pi 4 is used as our main processing unit with the remaining various components mounted around the box. The owner attaches a USB drive containing a .txt file with their name on it.
+								When a new envelope is put into the box, an LDR (Light Dependent Resistor) detects the change in light intensity and realizes that a piece of mail has been received.</br>
+								An ESP32 CAM camera module <a href="#references" id="references-link" class="skel-layers-ignoreHref">[1]</a> attached to an FTDI interface is used to take a picture of the envelope and save it onto a localhost web server. The picture is retrieved from the server by our Raspberry Pi, after which the Computer Vision (CV) component takes over.</br>
+								After the CV component compares the detected name on the envelope and the user’s name on the drive, if they are the same (within a preset 70% accuracy range), a Servo Motor <a href="#references" id="references-link" class="skel-layers-ignoreHref">[2]</a> turns to open up a flap and accept the mail and let it fall into the box, while a Green LED indicates to the deliverer that the mail has been accepted.</br>
+								If the comparison determines that the mail has not reached the correct person, a Red LED indicates to the deliverer to take out the mail and return it to the sender.
+								</p>
+								
+								<article class="item">
+									<img src="images/LDR.PNG" width="450" height="400" alt="" />
+										<h4>Light Dependent Resistor</h4>
+								</article>
+								
+								<article class="item">
+									<img src="images/Camera.PNG" width="450" height="400" alt="" />
+										<h4>ESP32-CAM with FTDI Interface</h4>
+								</article>
+								
+								<article class="item">
+									<img src="images/WebServer.PNG" width="450" height="400" alt="" />
+										<h4>Locally hosted Web Server</h4>
+								</article>
+
+							<h3 align="left">Computer Vision</h3>
+
+							<p align="left">After an image is taken by the camera, the Raspberry Pi tries to perform Optical Character Recognition (OCR) on the image to get text on which we can perform comparisons and classification. In order to get OCR text output, the algorithm has to first grab an outline of the mailpiece from the entire image and transform the image to fit the envelope.</br>
+							To do this, we use Computer Vision techniques to grey the image, blur the image, and then find the edges of the envelope in the image. We can then find the outline of the envelope and draw the contours to crop the image to that bounding box. After the image is transformed, we then color the image RGB and apply enhancements to the image such as increasing Contrast and Sharpness to help get more accurate OCR results.</br>
+							<article class="item">
+								<img src="images/0-original.jpg" width="338" height="450" alt="" />
+									<h4>Original Image</h4>
+							</article>
+							
+							<article class="item">
+								<img src="images/2-blurred.jpg" width="338" height="450" alt="" />
+									<h4>Greyed and Blurred</h4>
+							</article>
+							
+							<article class="item">
+								<img src="images/3-edged.jpg" width="338" height="450" alt="" />
+									<h4>Images with Contours</h4>
+							</article>
+
+							<article class="item">
+								<img src="images/7-enhanced.jpg" width="338" height="450" alt="" />
+									<h4>Enhanced Image</h4>
+							</article>
+							The algorithm then attempts to recognize words in the image and convert them to text <a href="#references" id="references-link" class="skel-layers-ignoreHref">[3]</a>. This text is parsed through Python Regular Expressions and split into names and addresses ignoring any other writing on the envelope. We determine which name and address is the senders vs receivers by splitting the image into sections since we can safely assume that in the US the sender's information is on the top left of the envelope and the receiver's information is in the middle.</br>
+							<article class="item">
+								<img src="images/5-transformed.jpg" width="338" height="450" alt="" />
+									<h4>Transformed Image (unable to find outline)</h4>
+							</article>
+							
+							<article class="item">
+								<img src="images/6-rgb.jpg" width="338" height="450" alt="" />
+									<h4>Colored Image</h4>
+							</article>
+							
+							<article class="item">
+								<img src="images/8a-RGBlocations.jpg" width="338" height="450" alt="" />
+									<h4>Images with Locations</h4>
+							</article>
+							Finally, the Pi determines if the sender name, sender address, receiver name and receiver address are coherent. If not, it tries various enhancements and rotations on image until comprehensible text is output. This output is saved into a text file on the Pi for use my the Machine Learning component.</p>
+							<article class="item">
+								<img src="images/8-locations.jpg" width="450" height="338" alt="" />
+									<h4>Rotated Image with Locations</h4>
+							</article>
+							
+							<article class="item">
+								<img src="images/mail-text.jfif" width="400" height="400" alt="" />
+									<h4>Text Output</h4>
+							</article>
+								
+							<h3 align="left">Machine Learning</h3>
+
+							<p align="left">
+							As one may have experienced, spam mails are abundant and can be a nuisance. This is why we have employed machine learning to detect spam mail from non-spam mail. 
+							A k-nearest neighbors classifier was chosen to complete this task. Mail was categorized as spam or not based on a publically available dataset of spam keywords <a href="#references" id="references-link" class="skel-layers-ignoreHref">[4]</a>.
+							Specific examples of 'spammy' mail was added to the dataset to fulfill our goals and refine the model. After data preprocessing and model training, the k-NN model was able to determine spam/not with an accuracy of 92%.
+							Finally, using the Twilio text messaging API <a href="#references" id="references-link" class="skel-layers-ignoreHref">[5]</a>, a text message notifying the user of new mail and if that mail was spam/not is sent, along with a link to view the data visualization stats. 
+							<article class="item">
+								<img src="images/ml1.JPG" width="450" height="400" alt="" />
+									<h4>Data Preprocessing & Model Training</h4>
+								
+								<img src="images/ml2.JPG" width="450" height="400" alt="" />
+									<h4>Message Prediction and Text Notification</h4>
+							</article>
+							</p>
+
+							<h3 align="left">Data Visualization on the Cloud</h3>
+
+							<p align="left">After filtering to check if the receiver name matches the name of the mailbox user, as explained in the previous section, all mail records are stored in a dataframe that is then sent to Google Sheets.
+									This was done by storing all the records in a dictionary and then, after the prediction result, updating the dictionary with the result and storing it in a pickle file each time a new result comes in.
+									The next step was to enable the Google Sheets and Google Drive APIs on Google Cloud Platform to be able to send the updated dataframe for storage on Google Sheets <a href="#references" id="references-link" class="skel-layers-ignoreHref">[6]</a>. 
+									Using another cloud-based tool, the data visualization was done. Google DataStudio was used to pull the data from Google Sheets and perform various visualizations that turns the raw data into useful information for the user to understand.
+									Full data visualization results are in the <a href="#results" id="results-link" class="skel-layers-ignoreHref">Results</a> section below.
+								<article class="item">
+									<a href="https://docs.google.com/spreadsheets/d/190g032Wi1UO8RdGUmunuQvR6CDv-5VuuwQ-7bbCwDvM/edit#gid=214389789"><img src="images/sheets.JPG" width="900" height="400" alt="" /></a>
+										<h4>Data Stored on Google Sheets</h4>
+								</article>
+								
+								</p>
+
+							<h3 align="left">Prototype</h3>
+							
+							<article class="item">
+								<img src="images/Prototype.jpeg" width="600" height="500" alt="" />
+								<header>
+									<h3>Our First Prototype Design of the ICM</h3>
+								</header>
+							</article>
+						</div>
+					</section>
+
+					<section id="results" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Results</h2>
+							</header>
+
+							<p align="left">Once all processing is done, including acceptance of the mail, OCR, and ML categorization, the accepted mail record is stored on Google Sheets. Google DataStudio uses the data from Google Sheets to perform some visualizations seen below.</p>
+
+
+							<article class="item">
+								<a href="https://datastudio.google.com/reporting/5baac953-c958-40e0-b344-6f94c4c86df4" class="image fit"><img src="images/dataviz_full.JPG" alt="" /></a>
+								<header>
+									<h3>The visualization dashboard has 5 metrics in total. Anyone with a link to the visualization dashboard can view it. The refresh rate of the data is every 15 minutes, however, the data can be refreshed manually by the user if needed.</h3>
+								</header>
+								<a href="https://datastudio.google.com/reporting/5baac953-c958-40e0-b344-6f94c4c86df4"><img src="images/count.JPG" width="200" height="130" alt="" /></a>
+								<header>
+									<h3>The above image shows the current count of all mail in the mailbox.</h3>
+								</header>
+								<a href="https://datastudio.google.com/reporting/5baac953-c958-40e0-b344-6f94c4c86df4"><img src="images/spam_sender.JPG" width="600" height="450" alt="" /></a>
+								<header>
+									<h3>Above, we see the number of spam/not mails and from which sender these particular mails are coming from. For example, the JANE DOE was classified as spam 44 times and not spam 36 times. This is because the ML model is taking in both sender name and receiver name when making a spam/not decision, which affects the final outcome.</h3>
+								</header>
+								<a href="https://datastudio.google.com/reporting/5baac953-c958-40e0-b344-6f94c4c86df4"><img src="images/spam_not.JPG" width="600" height="450" alt="" /></a>
+								<header>
+									<h3>In this visualization we see the total number of spam/not mails currently in the mailbox.</h3>
+								</header>
+								<a href="https://datastudio.google.com/reporting/5baac953-c958-40e0-b344-6f94c4c86df4"><img src="images/daily_count.JPG" width="600" height="450" alt="" /></a>
+								<header>
+									<h3>The above visualization shows the number of mails delivered on each day through time.</h3>
+								</header>
+								<a href="https://datastudio.google.com/reporting/5baac953-c958-40e0-b344-6f94c4c86df4"><img src="images/hour_count.JPG" width="600" height="450" alt="" /></a>
+								<header>
+									<h3>The final visualization shows the hourly delivery trend of mails into the mailbox. Currently, it shows that most mail arrived around 4-4:30 pm on each day.</h3>
+								</header>
+								<img src="images/text.jpg" width="600" height="450" alt="" />
+								<header>
+									<h3>The text message the user will receive is in the format shown above. It notifies the user that they have new mail, along with providing the ML-determined category of the mail. It also provides a link to the data visualization dashboard so the user can easily navigate to their mailbox statistics.</h3>
+								</header>
+							</article>
+
+
+						</div>
+					</section>
+
+					<section id="references" class="three">
+						<div class="container">
+
+							<header>
+								<h2>References</h2>
+							</header>
+
+							<p align="left">
+								<ol>
+									<li align="left">1. SDigikey. 2021. [online] Available <a href="https://www.digikey.com/en/maker/blogs/2021/how-to-control-servo-motors-with-a-raspberry-pi">here.</a> [Accessed 15 December 2021].</li>
+									<li align="left">2. Santos, R., 2021. ESP32-CAM Take Photo and Display in Web Server | Random Nerd Tutorials. [online] Random Nerd Tutorials. Available <a href="https://randomnerdtutorials.com/esp32-cam-take-photo-display-web-server/">here.</a> [Accessed 15 December 2021].</li>
+								  <li align="left">3. PyImageSearch. 2021. PyImageSearch - You can master Computer Vision, Deep Learning, and OpenCV. [Online] Available <a href="https://www.pyimagesearch.com/">here.</a> [Accessed 8 December 2021].</li>
+								  <li align="left">4. Communication APIs for SMS. 2021. Twilio. [Online] Available <a href="https://www.twilio.com">here.</a> [Accessed 30 November 2021].</li>
+								  <li align="left">5. aghezzafmohamed/Email-Classification. 2019. GitHub. [Online] Available <a href="https://github.com/aghezzafmohamed/Email-Classification">here.</a> [Accessed 26 November 2021].</li>
+								  <li align="left">6. Google Sheets for Developers. 2021. Sheets API. [Online] Available <a href="https://www.pyimagesearch.com/">here.</a> [Accessed 2 December 2021]. </li>
+								</ol>
+							</p>
+
+						</div>
+					</section>
+
+
+				<!-- About Me -->
+					<section id="team" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Our Team</h2>
+							</header>
+
+							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="https://www.linkedin.com/in/anhadveer-khokar/" class="image fit"><img src="images/Anhad.png" alt="Anhad" /></a>
+										<header>
+											<h3>Anhadveer Khokar</h3>
+											<p>M.S. Electrical Engineering at Columbia University</p>
+											<p>linkedin.com/in/anhadveer-khokar/</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="https://www.linkedin.com/in/nihargarg/" class="image fit"><img src="images/nihar.jpg" alt="Nihar" /></a>
+										<header>
+											<h3>Nihar Garg</h3>
+											<p>M.S. Mechanical Engineering (Robotics and Control) at Columbia University</p>
+											<p>linkedin.com/in/nihargarg/</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="https://www.linkedin.com/in/rohanraghuraman/" class="image fit"><img src="images/rohan_pic.jpg" alt="Rohan" /></a>
+										<header>
+											<h3>Rohan Raghuraman</h3>
+											<p>M.S. Electrical Engineering at Columbia University</p>
+											<p>linkedin.com/in/rohanraghuraman/</p>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p align="left">
+								<strong>Anhadveer Khokar: </strong>adk2174@columbia.edu</br>
+								<strong>Nihar Garg: </strong>nihar.garg@columbia.edu</br>
+								<strong>Rohan Raghuraman: </strong>rohan.r@columbia.edu</br>
+							</br>
+								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
+								<!-- <strong>Class Website:</strong>
+									<a href="https://edblogs.columbia.edu/eecs4764-001-2019-3/">Columbia University EECS E4764 Fall '21 IoT</a></br> -->
+								<strong>Instructor:</strong> <a href="http://fredjiang.com/">Professsor Xiaofan (Fred) Jiang</a>
+							</p>
+
+
+							<!-- <form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form> -->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; IoT Project | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
