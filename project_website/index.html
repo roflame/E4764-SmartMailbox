@@ -200,7 +200,7 @@
 							<p align="left">
 							As one may have experienced, spam mails are abundant and can be a nuisance. This is why we have employed machine learning to detect spam mail from non-spam mail. 
 							A k-nearest neighbors classifier was chosen to complete this task. Mail was categorized as spam or not based on a publically available dataset of spam keywords <a href="#references" id="references-link" class="skel-layers-ignoreHref">[4]</a>.
-							Specific examples of 'spammy' mail was added to the dataset to fulfill our goals and refine the model. After data preprocessing and model training, the k-NN model was able to determine spam/not with an accuracy of 92%.
+							Specific examples of 'spammy' mail was added to the dataset to fulfill our goals and refine the model. After data preprocessing and model training, the 'Sender Name' and 'Receiver Name' were sent to the k-NN model. Using these input fields the model was able to determine spam/not with an accuracy of 92%.
 							Finally, using the Twilio text messaging API <a href="#references" id="references-link" class="skel-layers-ignoreHref">[5]</a>, a text message notifying the user of new mail and if that mail was spam/not is sent, along with a link to view the data visualization stats. 
 							<article class="item">
 								<img src="images/ml1.JPG" width="450" height="400" alt="" />
@@ -219,7 +219,7 @@
 									Using another cloud-based tool, the data visualization was done. Google DataStudio was used to pull the data from Google Sheets and perform various visualizations that turns the raw data into useful information for the user to understand.
 									Full data visualization results are in the <a href="#results" id="results-link" class="skel-layers-ignoreHref">Results</a> section below.
 								<article class="item">
-									<a href="https://docs.google.com/spreadsheets/d/190g032Wi1UO8RdGUmunuQvR6CDv-5VuuwQ-7bbCwDvM/edit#gid=214389789"><img src="images/sheets.JPG" width="900" height="400" alt="" /></a>
+									<a href="https://docs.google.com/spreadsheets/d/190g032Wi1UO8RdGUmunuQvR6CDv-5VuuwQ-7bbCwDvM/edit#gid=214389789"><img src="images/sheets.JPG" width="960" height="400" alt="" /></a>
 										<h4>Data Stored on Google Sheets</h4>
 								</article>
 								
